@@ -1,5 +1,5 @@
 package Field;
 
-public interface IWheat {
+public interface IWheat {                               //aus Übung: Schnittstelle
     int getNumberOfGrain();
 }

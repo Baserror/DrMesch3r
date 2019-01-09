@@ -4,7 +4,7 @@ import Field.Wheat;
 
 import java.util.Comparator;
 
-public class GrainSorter implements Comparator<Wheat> {
+public class GrainSorter implements Comparator<Wheat> {                //aus Übung: Sortieren und Suchen
 
 
     public int compare(Wheat wheat1, Wheat wheat2){

@@ -23,7 +23,7 @@ public class Wheat implements IWheat {
         this.y = y;
     }
 
-    @Override
+    @Override                                               //aus Übung: Überschreiben
     public int getNumberOfGrain() {
         return numberOfGrain;
     }

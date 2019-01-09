@@ -11,9 +11,9 @@ public class Field implements IField {
         this.fieldSizeX =fieldSizeX;
         this.fieldSizeY =fieldSizeY;
     }
-    @Override
+    @Override                                               //aus Übung: Überschreiben
     public HashMap createField () {
-        return new HashMap();
+        return new HashMap();                               //aus Übung: Datenstrukturen
     }
 
     public int getFieldSizeX() {

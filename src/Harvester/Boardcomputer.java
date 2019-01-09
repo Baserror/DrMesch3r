@@ -44,17 +44,17 @@ public class Boardcomputer{
         return Wheat;
     }
 
-    public void createDscGrainList(Drone drone, HashMap hashmap){
+    public void createDscGrainList(Drone drone, HashMap hashmap){                //aus Übung: Sortieren und Suchen
         ArrayList<Wheat> SortedWheatByGrain=HashmapToList(hashmap);
         Collections.sort(SortedWheatByGrain, new GrainSorter());
     }
 
-    public void createAscXCoordList(Drone drone, HashMap hashmap){
+    public void createAscXCoordList(Drone drone, HashMap hashmap){                //aus Übung: Sortieren und Suchen
         ArrayList<Wheat> SortedWheatByX=HashmapToList(hashmap);
         Collections.sort(SortedWheatByX, new XSorter());
     }
 
-    public void createAscYCoordList(Drone drone, HashMap hashmap){
+    public void createAscYCoordList(Drone drone, HashMap hashmap){                //aus Übung: Sortieren und Suchen
         ArrayList<Wheat> SortedWheatByY=HashmapToList(hashmap);
         Collections.sort(SortedWheatByY, new YSorter());
     }
