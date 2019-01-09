@@ -1,6 +1,8 @@
 package Field;
 
-public interface IField {
-    int getFieldSize();
+import java.util.HashMap;
+
+public interface IField {                               //aus Übung: Schnittstelle
+    public HashMap createField ();
 
 }
