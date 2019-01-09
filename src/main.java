@@ -10,16 +10,22 @@ public class main {
 
     public static void main(String[] args) {
 
-        Field field = new Field(100, 100);
+        Field field = new Field(10, 10);
         Drone drone = new Drone();
         Boardcomputer boardcomputer = new Boardcomputer(field, drone);
         HashMap hashmap = drone.scanField(field, field.createField());
         System.out.println();
+
+        boardcomputer.createDscGrainList(drone, hashmap);
+        boardcomputer.createAscXCoordList(drone, hashmap);
+        boardcomputer.createAscYCoordList(drone, hashmap);
+
+
+        System.out.println();
+
         System.out.println("Möchtest du die Körneranzahl einer bestimmten Pflanze wissen?(y/n)");
         Scanner scan = new Scanner(System.in);
         char choice = scan.next().charAt(0);
-
-        boardcomputer.makeLists(drone, hashmap);
 
 
         if (choice == 'y') {
@@ -34,7 +40,6 @@ public class main {
         } else {
             System.out.println("Du hättest ein y oder ein n eingeben sollen >:(");
         }
-
 
     }
 
