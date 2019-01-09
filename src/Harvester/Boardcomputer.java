@@ -1,8 +1,9 @@
 package Harvester;
 
 import java.util.*;
-import java.util.Collection;
 
+import Comparators.XSorter;
+import Comparators.YSorter;
 import Drone.Drone;
 import Field.Field;
 import Field.Wheat;
@@ -24,10 +25,9 @@ public class Boardcomputer{
         return wheat.getNumberOfGrain();
     }
 
-    public void makeLists(Drone drone, HashMap hashmap){
+    public ArrayList HashmapToList(HashMap hashmap){
 
-
-        ArrayList<Wheat> SortedWheatByGrain =new ArrayList<>();
+        ArrayList<Wheat> Wheat =new ArrayList<>();
 
         for (int x = 0; x < field.getFieldSizeX(); x++) {
             for (int y = 0; y < field.getFieldSizeY(); y++) {
@@ -36,16 +36,26 @@ public class Boardcomputer{
 
                 Wheat wheat = (Wheat) hashmap.get(key);
 
-                SortedWheatByGrain.add(wheat);
+                Wheat.add(wheat);
 
 
             }
         }
-
-        Collections.sort(SortedWheatByGrain, new GrainSorter());
-
-
+        return Wheat;
     }
 
+    public void createDscGrainList(Drone drone, HashMap hashmap){
+        ArrayList<Wheat> SortedWheatByGrain=HashmapToList(hashmap);
+        Collections.sort(SortedWheatByGrain, new GrainSorter());
+    }
 
+    public void createAscXCoordList(Drone drone, HashMap hashmap){
+        ArrayList<Wheat> SortedWheatByX=HashmapToList(hashmap);
+        Collections.sort(SortedWheatByX, new XSorter());
+    }
+
+    public void createAscYCoordList(Drone drone, HashMap hashmap){
+        ArrayList<Wheat> SortedWheatByY=HashmapToList(hashmap);
+        Collections.sort(SortedWheatByY, new YSorter());
+    }
 }

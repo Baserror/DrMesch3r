@@ -8,6 +8,14 @@ public class Wheat implements IWheat {
     int x;
     int y;
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public Wheat(int x, int y) {
         Random random = new Random();
         this.numberOfGrain = random.nextInt(399) + 100;
