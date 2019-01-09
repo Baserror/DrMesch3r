@@ -1,18 +1,37 @@
 package Drone;
 
-public class Drone {
+import Field.Field;
+import Field.Wheat;
 
-   /* public Map<String, Wheat> scanField() {
-        Map<String, Wheat> wheatHashSet = new HashMap<>();
-        for (int i = 0; i <= Field.getField().length; i++) {
-            for (int j = 0; j <= Field.getField().length; j++) {
+import java.util.HashMap;
 
-                wheatHashSet.put(String.valueOf(0)+String.valueOf(i)+String.valueOf(j),new Wheat(i,j));
+public class Drone implements IDrone {
+
+private String stringCoords;
+
+    @Override
+    public HashMap<String,Wheat> scanField(Field field, HashMap hashmap) {
+        int grain;
+        for (int x = 0; x < field.getFieldSizeX(); x++) {
+            System.out.println();
+            for (int y = 0; y < field.getFieldSizeY(); y++) {
+
+                Wheat wheat = new Wheat(field.getFieldSizeX(),field.getFieldSizeY());
+                String key=coordinatesToString(x,y);
+                hashmap.put(key,wheat);
+                System.out.print(wheat.getNumberOfGrain()+" ");
             }
         }
+        return hashmap;
 
-        return wheatHashSet;
+
     }
-*/
+
+    @Override
+    public String coordinatesToString(int xCoord, int yCoord){
+        stringCoords=xCoord+","+yCoord;
+        return stringCoords;
+    }
+
 }
 
